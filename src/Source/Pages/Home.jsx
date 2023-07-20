@@ -36,7 +36,8 @@ function Home({ height }) {
             justifyContent={'center'}
             id='Home'
             paddingX={{ base: '15px', sm: "50px", md:'40px', lg:'100px' }}
-            paddingY={{base: '20px', sm: '20px', md:'80px'}}
+            paddingY={{ base: '20px', sm: '20px', md: '80px' }}
+            textShadow={ShadowText}
         >
             <Box
                 
@@ -45,7 +46,8 @@ function Home({ height }) {
                 width={'100%'}
                 borderRadius={{base: '10px', }}
                 alignItems={'center'}
-                bg={RandomGradientColor}
+                // bg={RandomGradientColor}
+                
                 boxShadow={RandomBoxShadow}
                 display={'flex'}
                 flexDir={{ base: 'column-reverse', sm: 'column-reverse', md:"row", lg: "row", xl: 'row', '2xl':'row' }}
@@ -61,11 +63,11 @@ function Home({ height }) {
                         fontWeight={800}
                         fontFamily={'Bad Script'}
                         fontSize={12}
-                        textShadow={ShadowText}
+                        
                     >
                         Hello There!
                     </Text>
-                    <Text fontSize={40} fontWeight={800} fontFamily={'Cinzel Decorative'} >Ritik Raj <sub style={{fontSize:'20'}} >Here!</sub> </Text>
+                    <Text fontSize={40} textShadow={ShadowText}  fontWeight={800} fontFamily={'Cinzel Decorative'} >Ritik Raj <sub style={{fontSize:'20'}} >Here!</sub> </Text>
                     <Text fontSize={20} fontFamily={'Rancho'} >A Full Stack Web and App Developer </Text>
                     <Flex mt='10'
                         w='80%' fontSize={30} justify={'center'} alignItems={'flex-end'}
@@ -95,11 +97,12 @@ function Home({ height }) {
                 <Box
                     width={{ base: '90%', sm: "80%", md: "50%", xl: '40%' }} height={{ base: '50%', md: '75%', xl: '80%' }} >
                     <Image border={'5px solid white'}
-                        borderRadius={10}
-                        w={{ base: '80%', }}
+                        borderRadius={0.1}
+                        boxShadow={RandomBoxShadow}
+                        w={{ base: '75%', }}
                         h={{ base: "90%" }}
                         m={{base:'10px auto'}}
-                        src="https://6479a5d363dc2604c72e7bb0--capable-macaron-d8101b.netlify.app/ritik.jpg" />
+                        src="https://avatars.githubusercontent.com/u/117502397?v=4" />
                 </Box>
 
 

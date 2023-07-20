@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 
-export default function Helper(i=0) {
+export default function Helper() {
     const backgroundColors = [
         "#E57373", "#F06292", "#BA68C8", "#9575CD", "#7986CB",
         "#64B5F6", "#4FC3F7", "#4DD0E1", "#4DB6AC", "#81C784",
@@ -121,14 +121,29 @@ export function RandomGradientColor() {
 export function RandomBoxShadow() {
     const boxShadows = [
         '0 0 10px 5px #00FFFF',
-        '0 0 20px 10px #00FFFF',
-        '0 0 30px 15px #00FFFF',
-        '0 0 40px 20px #00FFFF',
-        '0 0 50px 25px #00FFFF',
-        '0 0 10px 5px #00ff00',
-        '0 0 10px 5px #00FFFF'
+        // '0 0 20px 10px #00FFFF',
+        // '0 0 30px 15px #00FFFF',
+        // '0 0 40px 20px #00FFFF',
+        // '0 0 50px 25px #00FFFF',
+        // '0 0 10px 5px #00ff00',
+        // '0 0 10px 5px #00FFFF'
 
     ]
 
     return boxShadows[Math.floor(Math.random() * boxShadows.length)]
+}
+
+export function RandomBoxShadow2() {
+    const boxShadows = [
+        '0 0 5px 5px',
+        '0 0 5px 5px',
+        '0 0 5px 5px',
+        '0 0 5px 5px',
+        '0 0 5px 5px',
+        '0 0 5px 5px',
+        '0 0 5px 5px'
+
+    ]
+
+    return boxShadows[Math.floor(Math.random() * boxShadows.length)] + Helper()
 }

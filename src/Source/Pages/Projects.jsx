@@ -22,7 +22,7 @@ function Projects({ height }) {
     const [hov, sethov] = useState(false)
     let myprojects = [
         {
-            name: 'Sportiy', text: "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.A collaborative project build by a team of 6 developers in 6 days and used open source API of spotify .",
+            name: 'Spotify', text: "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.A collaborative project build by a team of 6 developers in 6 days and used open source API of spotify .",
             techStack: ["HTML", "CSS", "JAVASCRIPT"],
             responsbility: ["Home page UI & CSS with JavaScript", "Manage All API calls", "Work as leader"],
             image: 'https://dilasathapa.github.io/static/media/spotifyclonecom.914510491b847df6f968.gif', github: 'https://github.com/ritikraj07/Project_Spotify.com', deploy: 'https://640351fb29b7613bca3776b6--wondrous-stroopwafel-729c2a.netlify.app/html/'
@@ -32,19 +32,7 @@ function Projects({ height }) {
             techStack: ["HTML", "CSS", "JAVASCRIPT"],
             responsbility: ["Home page UI & CSS with JavaScript", "Manage All API calls", "Work as leader"],
             image: 'https://6479a15feee9a000c0583ee5--glittery-smakager-e5b23b.netlify.app/shop.gif'
-        },
-        {
-            name: 'Sportiy2', text: "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.A collaborative project build by a team of 6 developers in 6 days and used open source API of spotify .",
-            techStack: ["HTML", "CSS", "JAVASCRIPT"],
-            responsbility: ["Home page UI & CSS with JavaScript", "Manage All API calls", "Work as leader"],
-            image: 'https://dilasathapa.github.io/static/media/spotifyclonecom.914510491b847df6f968.gif', github: 'https://github.com/ritikraj07/Project_Spotify.com', deploy: 'https://640351fb29b7613bca3776b6--wondrous-stroopwafel-729c2a.netlify.app/html/'
-        },
-        {
-            name: 'Sportiy3', text: "Spotify is a digital music, podcast, and video service that gives you access to millions of songs and other content from creators all over the world. Basic functions such as playing music are totally free, but you can also choose to upgrade to Spotify Premium.A collaborative project build by a team of 6 developers in 6 days and used open source API of spotify .",
-            techStack: ["HTML", "CSS", "JAVASCRIPT"],
-            responsbility: ["Home page UI & CSS with JavaScript", "Manage All API calls", "Work as leader"],
-            image: 'https://dilasathapa.github.io/static/media/spotifyclonecom.914510491b847df6f968.gif', github: 'https://github.com/ritikraj07/Project_Spotify.com', deploy: 'https://640351fb29b7613bca3776b6--wondrous-stroopwafel-729c2a.netlify.app/html/'
-        },
+        }
     ]
 
 
@@ -63,7 +51,14 @@ function Projects({ height }) {
     }, [count, hov])
 
     function HandleClick(dir) {
-        setcount(count + dir)
+        let cot = count + dir;
+        if (cot >= myprojects.length) {
+            cot = 0;
+        } else if (cot < 0) {
+            cot = myprojects.length - 1;
+        }
+        
+        setcount(cot)
     }
 
     return (
@@ -78,10 +73,10 @@ function Projects({ height }) {
             <Box
                 h='100%'
                 w='100%'
-                bg={RandomGradientColor}
+                // bg={RandomGradientColor}
                 boxShadow={RandomBoxShadow}
                 borderRadius={{ base: '10px', }}
-                paddingX={{ base: '5px', sm: "50px", md: '40px', lg: '50px' }}
+                paddingX={{ base: '1px', sm: "2px", md: '20px', lg: '10px' }}
 
             >
 
@@ -136,13 +131,13 @@ function Projects({ height }) {
                             display={i == count ? "flex" : "none"}
                             alignItems={'center'}
                             justifyContent={'space-between'}
-                            bg="black"
-                            p="5"
+                            // bg="black"
+                            p={{base:1, sm:2, md:3, lg:4, xl:5}}
                             flexDir={{base:"column", sm:'column', md: 'row',lg:'row', xl:'row'}}
                             borderRadius={4}
                             
                         >
-                            <Box w={{ base: "80%", sm: "80%", md: "80%", xl: "60%" }} h="100%"
+                            <Box w={{ base: "100%", sm: "80%", md: "80%", xl: "60%" }} h="100%"
                                 borderRadius={10}
                             >
                                 <Image
@@ -163,8 +158,10 @@ function Projects({ height }) {
                                 <Text
                                     fontWeight={700}
                                     fontSize={25}
-                                    fontFamily="Cinzel Decorative" >{pro.name}</Text>
-                                <Text fontFamily={'Bad Script'}
+                                    // fontFamily="Cinzel Decorative"
+                                >{pro.name}</Text>
+                                <Text
+                                    // fontFamily={'Bad Script'}
                                     textAlign={'justify'}
                                 >{pro.text}</Text>
                                 <Box w="100%" >

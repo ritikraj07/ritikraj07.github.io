@@ -16,12 +16,12 @@ function About({ height }) {
             justifyContent={'center'}
             id='About'
             paddingX={{ base: '15px', sm: "50px", md: '40px', lg: '100px' }}
-            paddingY={{ base: '20px', sm: '20px', md: '80px' }}
+            paddingY={{ base: '20px', sm: '20px', md: '60px' }}
         >
             <Box
                 h='100%'
                 w='100%'
-                bg={RandomGradientColor}
+                // bg={RandomGradientColor}
                 boxShadow={RandomBoxShadow}
                 borderRadius={{ base: '10px', }}
                 p='2'
@@ -36,23 +36,24 @@ function About({ height }) {
                     p={5}
                     paddingX={{ base: 2, sm:4, md: 10, lg: 15, xl: 15, '2xl': 20 }}
                     m={{ base: 2, sm: 10, md: 15, lg: 15, xl: 15, '2xl': 25 }}
-                    border={'8px solid white'}
-                    borderRadius={15}
-                    
+                    // border={'8px solid white'}
+                    // borderRadius={15}
+                    display={'flex'} alignItems={'center'} justifyContent={'center'}
+                    flexDir={'column'}
                     
                     h='80%'>
                     <Text
                         fontSize={15}
-                        fontWeight={600}
-                        fontFamily={'Bad Script'}
-                        textShadow={ShadowText}
+                        // fontWeight={600}
+                        // fontFamily={'Bad Script'}
+                        // textShadow={ShadowText}
                         whiteSpace={'pre-wrap'}
                         wordBreak={'break-word'}
 
                     >
                         Hello there ,
                         <br></br>
-                        This is me Ritik Raj.
+                        This is Ritik Raj .
                         <br></br>
                         Dedicated and detail-oriented Fullstack Developer. Eager to apply web and app development skills
                         to create amazing and highly scalable products with great user experiences. A firm believer in
@@ -65,16 +66,20 @@ function About({ height }) {
                         development to mobile app development.
                         <br></br>
                         In terms of technical skills, I am proficient in programming languages such as Java, JavaScript,
-                        Python, and have a basic knowledge of C and C++. Additionally, I possess knowledge of the
+                        Python, and have also knowledge of C and C++. Additionally, I possess knowledge of the
                         MERN stack, including MongoDB, Express, React, and Node.js. I am also familiar with libraries
-                        such as React Native, React Native Elements, Chakra UI, jQuery, and Bootstrap.
+                        such as React Native, React Native Elements, Chakra UI, jQuery, Material UI, and Bootstrap
 
                     </Text>
+                    <Box w={'100%'} >
                     <Text fontFamily={'Bad Script'}
                         textShadow={ShadowText}
-                        textAlign="right"
+                            textAlign="right"
+                            fontWeight={700}
+                            fontSize={20}
                     >Ritik Raj
-                    </Text>
+                        </Text>
+                    </Box>
 
                 </Box>
 

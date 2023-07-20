@@ -47,6 +47,8 @@ function Contact({ height }) {
             display={'flex'}
             alignItems={'center'}
             justifyContent={'center'}
+            color={'white'}
+            
             id='Contact'
             paddingX={{ base: '15px', sm: "50px", md: '40px', lg: '100px' }}
             paddingY={{ base: '20px', sm: '20px', md: '80px' }}
@@ -61,7 +63,7 @@ function Contact({ height }) {
             </Alert>
 
             <Box
-
+                
                 height={'100%'}
                 justifyContent={'center'}
                 width={'100%'}
@@ -83,10 +85,10 @@ function Contact({ height }) {
                     <Image m="auto" w="100%" src="https://dilasathapa.github.io/static/media/icon-animation.ce9b5736cd071feb5c99.gif" />
                 </Box>
                 <Box w={{ base: '95%', sm: '90%', md: "70%", lg: "65%", xl: '50%', '2xl': '50%' }} h="100%" >
-                    <Text fontSize={25} fontWeight={600} textAlign={'center'} >Let's Connect Dude</Text>
-                    <Box w="100%" border={"5px solid white"} borderStyle={"dotted"} h="80%" p={{ base: 2, sm: 3, md: 5, lg: 8, xl: 10, '2xl': 10 }} >
+                    <Text fontSize={25} fontWeight={600} textAlign={'center'} >Let's Connect </Text>
+                    <Box w="100%" border={"5px solid white"} borderStyle={"dotted"} color={'white'} h="80%" p={{ base: 2, sm: 3, md: 5, lg: 8, xl: 10, '2xl': 10 }} >
                         
-                        <form id="myForm" ref={form} onSubmit={sendEmail} >
+                        <form  id="myForm" ref={form} onSubmit={sendEmail} >
                             <FormLabel fontSize={20}  >Enter Your Name</FormLabel>
                             <Input placeholder='Your Name' type="text" name="from_name" required />
                             <FormLabel fontSize={20} >Email </FormLabel>
@@ -99,15 +101,7 @@ function Contact({ height }) {
 
                     </Box>
                 </Box>
-
-
-
             </Box>
-
-
-
-
-
         </Box>
     );
 }

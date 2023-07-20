@@ -1,16 +1,19 @@
 import React, {useState } from 'react';
-import { Box, Text, Link } from '@chakra-ui/react';
+import { Box, Text, Link, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import '@fontsource/dancing-script';
 
 import Helper, { RandomGradientColor } from '../Utility/Helper';
-// import { ColorModeSwitcher } from '../../ColorModeSwitcher';
+import { ColorModeSwitcher } from '../../ColorModeSwitcher';
 
 
 function Navbar() {
     const pages = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
     const [active, setactive] = useState('Home');
     const [opa, setopa] = useState(0)
+    const color = useColorModeValue('light', 'dark');
+    console.log('====>', color)
 
+    let bg = color === 'dark' ?'#1A202C':'white'
 
     var isScrolling;
 
@@ -37,7 +40,8 @@ function Navbar() {
                 onMouseLeave={() =>setopa(0)}
                 transition={'1s'}
                 // bg="linear-gradient(163deg, rgba(211,60,195,0.978203781512605) 6%, rgba(113,33,188,1) 55%, rgba(0,255,252,1) 100%)"
-                bg={RandomGradientColor}
+                // bg={RandomGradientColor}
+                bg={bg}
                 width={'100%'}
                 display={{ base: 'none', lg: 'flex', xl: 'flex', '2xl': 'flex' }}
                 alignItems={'center'}
@@ -69,7 +73,7 @@ function Navbar() {
                             </Link>
                         );
                     })}
-                    {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
+                    <ColorModeSwitcher justifySelf="flex-end" />
                 </Box>
             </Box>
 
@@ -146,7 +150,7 @@ function Navbar() {
                 >
                     <Link href='#Projects' color={active === 'Projects' ? 'white' : 'transparent'}  >Projects </Link>
                 </Box>
-                <Box
+                {/* <Box
                     width={'150%'}
                     bg={Helper}
                     borderRadius={5}
@@ -160,7 +164,7 @@ function Navbar() {
                     }}
                 >
                     <Link href='#Servies' color={active === 'Servies' ? 'white' : 'transparent'}  >Servies </Link>
-                </Box>
+                </Box> */}
                 <Box
                     width={'150%'}
                     bg={Helper}
@@ -176,6 +180,9 @@ function Navbar() {
                 >
                     <Link href='#Contact' color={active === 'Contact' ? 'white' : 'transparent'} >Contact </Link>
                 </Box>
+                
+                <ColorModeSwitcher  />
+
             </Box>
 
 

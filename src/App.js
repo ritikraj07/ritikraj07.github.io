@@ -31,7 +31,8 @@ function App() {
   
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={RandomGradientColor} color={'white'} >
+      {/*  bg={'blackAlpha.800'} color="white" textShadow={'white'} */}
+      <Box >  
         <Navbar />
         
           <Home height={screenHeight} />
